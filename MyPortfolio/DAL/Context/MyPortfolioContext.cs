@@ -14,7 +14,7 @@ namespace MyPortfolio.DAL.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            // appsettings.json'daki bağlantı dizesini Dependency Injection (DI) ile alıyoruz
+            // json'daki bağlantı dizesini Dependency Injection (DI) ile alıyoruz
             var connectionString = _configuration.GetConnectionString("DefaultConnection");
             optionsBuilder.UseSqlServer(connectionString);
         }
