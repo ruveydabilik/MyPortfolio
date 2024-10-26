@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -8,12 +7,15 @@
 @await Component.InvokeAsync("LayoutHeadComponentPartial")
 
 <body>
-	<div class="wrapper">
-		@await Component.InvokeAsync("LayoutNavbarComponentPartial")
-		@await Component.InvokeAsync("LayoutSidebarComponentPartial")
-		
-		@RenderBody() @* Content will be here *@
-	</div>
+    <div class="wrapper">
+        @await Component.InvokeAsync("LayoutNavbarComponentPartial")
+        @await Component.InvokeAsync("LayoutSidebarComponentPartial")
+
+        <div class="main-panel">
+            @RenderBody() @* Content will be here *@
+            @await Component.InvokeAsync("LayoutFooterComponentPartial")
+        </div>
+    </div>
 </body>
 @await Component.InvokeAsync("LayoutScriptComponentPartial")
 </html>
