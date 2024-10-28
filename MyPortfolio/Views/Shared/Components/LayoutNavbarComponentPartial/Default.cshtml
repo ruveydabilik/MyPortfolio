@@ -1,4 +1,6 @@
-﻿<div class="main-header">
+﻿@model List<ToDoList>
+
+<div class="main-header">
 	<div class="logo-header">
 		<a href="index.html" class="logo">
 			Admin Paneli
@@ -36,30 +38,33 @@
 				<li class="nav-item dropdown hidden-caret">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<i class="la la-bell"></i>
-						<span class="notification">3</span>
+						<span class="notification">@ViewBag.toDoListCount</span>
 					</a>
 					<ul class="dropdown-menu notif-box" aria-labelledby="navbarDropdown">
 						<li>
-							<div class="dropdown-title">4 Yeni Bildiriminiz Var</div>
+							<div class="dropdown-title">@ViewBag.toDoListCount Yeni Bildiriminiz Var</div>
 						</li>
 						<li>
 							<div class="notif-center">
-								<a href="#">
+								@foreach(var item in Model)
+								{
+									<a href="#">
+										<div class="notif-icon notif-success"> <i class="@item.ImageUrl"></i> </div>
+										<div class="notif-content">
+											<span class="block">
+												@item.Title
+											</span>
+											<span class="time">@item.Date.ToShortDateString()</span>
+										</div>
+									</a>
+								}
+								@* <a href="#">
 									<div class="notif-icon notif-primary"> <i class="la la-user-plus"></i> </div>
 									<div class="notif-content">
 										<span class="block">
 											New user registered
 										</span>
 										<span class="time">5 minutes ago</span>
-									</div>
-								</a>
-								<a href="#">
-									<div class="notif-icon notif-success"> <i class="la la-comment"></i> </div>
-									<div class="notif-content">
-										<span class="block">
-											Rahmad commented on Admin
-										</span>
-										<span class="time">12 minutes ago</span>
 									</div>
 								</a>
 								<a href="#">
@@ -81,7 +86,7 @@
 										</span>
 										<span class="time">17 minutes ago</span>
 									</div>
-								</a>
+								</a> *@
 							</div>
 						</li>
 						<li>
