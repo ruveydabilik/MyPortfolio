@@ -200,7 +200,8 @@
 
     /* slick slider
      * ------------------------------------------------------ */
-    var ssSlickSlider = function() {
+    var ssSlickSlider = function () {
+        console.log($('.testimonials__slider'));
         
         $('.testimonials__slider').slick({
             arrows: true,
@@ -349,10 +350,10 @@
                 $.ajax({
     
                     type: "POST",
-                    url: "inc/sendEmail.php",
+                    url: "/Contact/SendMessage",
                     data: $(form).serialize(),
                     beforeSend: function() { 
-    
+
                         sLoader.slideDown("slow");
     
                     },

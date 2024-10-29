@@ -1,4 +1,5 @@
-﻿<section id="contact" class="s-contact target-section">
+﻿@model Message
+<section id="contact" class="s-contact target-section">
 
     <div class="overlay"></div>
 
@@ -6,30 +7,27 @@
         <div class="col-full">
             <h3>İletişim</h3>
             <h1>Bana Ulaşın</h1>
-
-            <p class="lead">Lorem ipsum Dolor adipisicing nostrud et aute Excepteur amet commodo ea dolore irure esse Duis nulla sint fugiat cillum ullamco proident aliquip quis qui voluptate dolore veniam Ut laborum non est in officia.</p>
         </div>
     </div>
 
     <div class="row contact__main">
         <div class="col-eight tab-full contact__form">
-            <form name="contactForm" id="contactForm" method="post" action="">
+            <form asp-controller="Contact" method="post" asp-action="SendMessage">
                 <fieldset>
-
                     <div class="form-field">
-                        <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="" aria-required="true" class="full-width">
+                        <input class="full-width btn--primary" asp-for="NameSurname" type="text" placeholder="Name" value="" minlength="2" required="" aria-required="true" class="form-control">
                     </div>
                     <div class="form-field">
-                        <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="" aria-required="true" class="full-width">
+                        <input class="full-width btn--primary" asp-for="Email" type="email" placeholder="Email" value="" required="" aria-required="true" class="form-control">
                     </div>
                     <div class="form-field">
-                        <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" class="full-width">
+                        <input class="full-width btn--primary" asp-for="Subject" type="text" placeholder="Subject" value="" minlength="2" required="" ria-required="true" class="form-control">
                     </div>
                     <div class="form-field">
-                        <textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
+                        <textarea class="full-width btn--primary" asp-for="MessageDetail" placeholder="message" rows="10" cols="50" minlength="2" required="" aria-required="true" class="form-control"></textarea>
                     </div>
                     <div class="form-field">
-                        <button class="full-width btn--primary">Gönder</button>
+                        <button class="btn btn-primary">Gönder</button>
                         <div class="submit-loader">
                             <div class="text-loader">Sending...</div>
                             <div class="s-loader">
@@ -39,19 +37,21 @@
                             </div>
                         </div>
                     </div>
-
                 </fieldset>
             </form>
 
-            <!-- contact-warning -->
-            <div class="message-warning">
-                Bir şeyler yanlış gitti. Lütfen yeniden deneyin!
-            </div>
-
-            <!-- contact-success -->
-            <div class="message-success">
-                Mesajınız gönderildi. Teşekkürler!<br>
-            </div>
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="message-success">
+                    @TempData["SuccessMessage"]
+                </div>
+            }
+            else if (TempData["ErrorMessage"] != null)
+            {
+                <div class="message-warning">
+                    @TempData["ErrorMessage"]
+                </div>
+            }
 
         </div>
         <div class="col-four tab-full contact__infos">
@@ -75,7 +75,5 @@
                 94043 US
             </p>
         </div>
-
     </div>
-
 </section>
