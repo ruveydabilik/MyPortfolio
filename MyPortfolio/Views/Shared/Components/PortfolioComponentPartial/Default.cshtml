@@ -19,7 +19,7 @@
                     <div class="item-folio">
 
                         <div class="item-folio__thumb">
-                            <a href=@item.ProjectLink class="thumb-link" title=@item.ProjectTitle data-size="1050x700">
+                            <a href=@item.ImageSource class="thumb-link" title=@item.ProjectTitle data-size="1050x700">
                                 <img src=@item.SecondImageSource
                                      srcset="@item.SecondImageSource 1x, @item.ThirdImageSource 2x" alt="">
                                 <span class="shadow-overlay"></span>
@@ -30,6 +30,10 @@
                             <h3 class="item-folio__title">
                                 @item.ProjectTitle
                             </h3>
+                        </div>
+
+                        <div class="item-folio__caption">
+                            <a href=@item.ProjectLink class="btn btn-link">Projeye Gitmek İçin Tıklayınız</a>
                         </div>
 
                     </div> <!-- end item-folio -->
