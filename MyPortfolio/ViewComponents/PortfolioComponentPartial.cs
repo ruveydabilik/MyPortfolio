@@ -12,9 +12,6 @@ namespace MyPortfolio.ViewComponents
         }
         public IViewComponentResult Invoke()
         {
-            ViewBag.aboutTitle = _portfolioContext.Portfolios.Select(x => x.Title).FirstOrDefault();
-            ViewBag.aboutSubTitle = _portfolioContext.Portfolios.Select(x => x.SubTitle).FirstOrDefault();
-            ViewBag.aboutDescription = _portfolioContext.Portfolios.Select(x => x.Description).FirstOrDefault();
             var values = _portfolioContext.Portfolios.ToList();
             return View(values);
         }
