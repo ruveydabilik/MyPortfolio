@@ -35,3 +35,24 @@
 
 ### GÖRSELLER:
 
+#### 🎉 **UI Tarafı**
+
+<img src="https://github.com/ruveydabilik/MyPortfolio/blob/main/screenshots/1.png" width="auto">
+
+<img src="https://github.com/ruveydabilik/MyPortfolio/blob/main/screenshots/2.png" width="auto">
+
+<img src="https://github.com/ruveydabilik/MyPortfolio/blob/main/screenshots/3.png" width="auto">
+
+<img src="https://github.com/ruveydabilik/MyPortfolio/blob/main/screenshots/4.png" width="auto">
+
+<img src="https://github.com/ruveydabilik/MyPortfolio/blob/main/screenshots/5.png" width="auto">
+
+#### 🎉 **Admin Paneli**
+
+<img src="https://github.com/ruveydabilik/MyPortfolio/blob/main/screenshots/6.png" width="auto">
+
+<img src="https://github.com/ruveydabilik/MyPortfolio/blob/main/screenshots/7.png" width="auto">
+
+<img src="https://github.com/ruveydabilik/MyPortfolio/blob/main/screenshots/8.png" width="auto">
+
+<img src="https://github.com/ruveydabilik/MyPortfolio/blob/main/screenshots/9.png" width="auto">
