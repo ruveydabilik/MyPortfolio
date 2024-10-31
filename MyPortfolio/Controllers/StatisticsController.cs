@@ -17,8 +17,12 @@ namespace MyPortfolio.Controllers
             // Veritabanındaki Messages tablosundaki okunmamış olarak belirtilen mesaj sayısı
             ViewBag.numOfUnreadMessages = _portfolioContext.Messages.Where(x => x.IsRead == false).Count();
             // Veritabanındaki okunmuş olarak belirtilen mesaj sayısı
-            ViewBag.numOfReadMessages = _portfolioContext.Messages.Where(x => x.IsRead == true).Count(); 
-            
+            ViewBag.numOfReadMessages = _portfolioContext.Messages.Where(x => x.IsRead == true).Count();
+
+            ViewBag.numOfPortfolio = _portfolioContext.Portfolios.Count();
+            ViewBag.numOfToDo = _portfolioContext.ToDoLists.Count();
+            ViewBag.numOfNotDone = _portfolioContext.ToDoLists.Where(x => x.Status == false).Count();
+            ViewBag.numOfDone = _portfolioContext.ToDoLists.Where(x => x.Status == true).Count();
             return View();
         }
     }

@@ -23,16 +23,17 @@
 					</div>
 				</div>
 			</form>
+
 			<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
 				<li class="nav-item dropdown hidden-caret">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<i class="la la-envelope"></i>
+						<span class="notification">@ViewBag.messageCount</span>
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">Gelen Mesajlar</a>
-						<a class="dropdown-item" href="#">Yeni Mesaj</a>
-						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">İletişim Paneli</a>
+						<a class="dropdown-item" href="/Message/Inbox/">Gelen Mesajları Görüntüle</a>
+						@* <div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">İletişim Paneli</a> *@
 					</div>
 				</li>
 				<li class="nav-item dropdown hidden-caret">
@@ -42,13 +43,13 @@
 					</a>
 					<ul class="dropdown-menu notif-box" aria-labelledby="navbarDropdown">
 						<li>
-							<div class="dropdown-title">@ViewBag.toDoListCount Yeni Bildiriminiz Var</div>
+							<div class="dropdown-title">@ViewBag.toDoListCount Yeni Yapılacak İşiniz Var</div>
 						</li>
 						<li>
 							<div class="notif-center">
 								@foreach(var item in Model)
 								{
-									<a href="#">
+									<a href="/ToDoList/UpdateToDo/@item.ToDoListId">
 										<div class="notif-icon notif-success"> <i class="@item.ImageUrl"></i> </div>
 										<div class="notif-content">
 											<span class="block">
@@ -90,31 +91,31 @@
 							</div>
 						</li>
 						<li>
-							<a class="see-all" href="javascript:void(0);"> <strong>See all notifications</strong> <i class="la la-angle-right"></i> </a>
+							<a class="see-all" href="/ToDoList/Index/"> <strong>Tümünü Görüntüle</strong> <i class="la la-angle-right"></i> </a>
 						</li>
 					</ul>
 				</li>
 				<li class="nav-item dropdown">
-					<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="~/Ready-Bootstrap-Dashboard-master/assets/img/profile.jpg" alt="user-img" width="36" class="img-circle"><span>Admin</span></span> </a>
+					<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="~/image/demo.jpg" alt="user-img" width="36" class="img-circle"><span>Admin</span></span> </a>
 					<ul class="dropdown-menu dropdown-user">
 						<li>
 							<div class="user-box">
-								<div class="u-img"><img src="~/Ready-Bootstrap-Dashboard-master/assets/img/profile.jpg" alt="user"></div>
+								<div class="u-img"><img src="~/image/demo.jpg" alt="user"></div>
 								<div class="u-text">
 									<h4>Admin</h4>
 									<p class="text-muted">hello@themekita.com</p>
-									<a href="profile.html" class="btn btn-rounded btn-danger btn-sm">Profili Gör</a>
+									<a href="/Default/Index/" class="btn btn-rounded btn-danger btn-sm">Profili Gör</a>
 								</div>
 							</div>
 						</li>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#"><i class="ti-user"></i>Profilim</a>
-						<a class="dropdown-item" href="#"></i>Siteye Git</a>
-						<a class="dropdown-item" href="#"><i class="ti-email"></i>Gelen Mesajlar</a>
-						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="/About/About/"><i class="ti-user"></i>Profilim</a>
+						<a class="dropdown-item" href="/Default/Index/"></i>Siteye Git</a>
+						<a class="dropdown-item" href="/Message/Inbox/"><i class="ti-email"></i>Gelen Mesajlar</a>
+						@* <div class="dropdown-divider"></div>
 						<a class="dropdown-item" href="#"><i class="ti-settings"></i>Şifre Değiştir</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#"><i class="fa fa-power-off"></i>Çıkış Yap</a>
+						<a class="dropdown-item" href="#"><i class="fa fa-power-off"></i>Çıkış Yap</a> *@
 					</ul>
 					<!-- /.dropdown-user -->
 				</li>
